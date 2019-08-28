@@ -1,0 +1,42 @@
+{% extends 'backend_layout.html' %}
+
+{% block css %}
+    <link rel="stylesheet" href="/static/plugins/kindeditor/themes/default/default.css"/>
+    <style>
+        .kind-content {
+            width: 100%;
+            min-height: 500px;
+        }
+    </style>
+{% endblock %}
+
+{% block contents %}
+    <ol class="breadcrumb" style="margin-bottom: 0;">
+        <li><a href="#">报障管理</a></li>
+        <li class="active">创建报障单</li>
+    </ol>
+    <h2>标题:</h2>
+    <h3>{{ obj.title }}</h3>
+    <h2>解决方案：</h2>
+    <h2>{{ obj.solution }}</h2>
+    <div style="padding: 5px 8px;">
+        <form method="POST" action="/backend/trouble-evaluate-{{ nid }}.html" novalidate>
+            {% csrf_token %}
+            <select name="evaluate" id="evaluate">
+                {% for item in evaluate_list %}
+                    <option value="{{ item.0 }}">{{ item.1 }}</option>
+                {% endfor %}
+            </select>
+
+            <div class="form-group">
+                <input type="submit" class="btn btn-primary" value="保 存">
+            </div>
+        </form>
+    </div>
+
+
+{% endblock %}
+
+{% block js %}
+
+{% endblock %}

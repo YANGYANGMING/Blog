@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="/static/css/commons.css">
+    <link rel="stylesheet" href="/static/css/backend.css">
+    <link rel="stylesheet" href="/static/plugins/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="/static/plugins/bootstrap/css/bootstrap.css">
+    {% block css %}{% endblock %}
+
+</head>
+<body>
+
+    <div class="pg-header">
+        <div class="logo left">后台管理系统</div>
+        <div class="hl-menu left">
+            <a href="/" class="item">博客首页</a>
+{#            <div class="item-set">#}
+{#                <a href="#" class="item">菜单四</a>#}
+{#                <div class="sets">#}
+{#                    <a href="#">菜单四-1</a>#}
+{#                    <a href="#">菜单四-2</a>#}
+{#                    <a href="#">菜单四-3</a>#}
+{#                </div>#}
+{#            </div>#}
+        </div>
+        <div class="hr-menu right">
+            <a class="item" href="#">
+                消息
+                <i class="fa fa-commenting-o"></i>
+                <span class="badge bg-success">2</span>
+            </a>
+            <a class="item" href="#">
+                通知
+                <i class="fa fa-envelope-o"></i>
+                <span class="badge bg-success">2</span>
+            </a>
+            <a class="item" href="#">
+                任务
+                <i class="fa fa-bell-o"></i>
+                <span class="badge bg-danger">4</span>
+            </a>
+            <div class="avatar right">
+                <a class="item" href="#">
+                    <img src="/static/images/avatar/default.png" alt="">
+                </a>
+                <div class="sets">
+                    <a href="/backend/base-info.html">个人信息</a>
+                    <a href="/logout.html">注销</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pg-body">
+        <div class="menus">
+            <div class="item">
+                <a href="/backend/article-0-0.html" class="item-title fa fa-cogs"> 文章管理</a>
+{#                <div class="item-content hide">#}
+{#                    <a href="">文章管理</a>#}
+{#                    <a href="" id="menu_tag">标签管理</a>#}
+{#                    <a href="">分类管理</a>#}
+{#                    <a href="">个人信息</a>#}
+{#                </div>#}
+                <a href="/backend/category.html" class="item-title fa fa-cogs"> 分类管理</a>
+                <a href="/backend/tag.html" class="item-title fa fa-cogs"> 标签管理</a>
+                <a href="/backend/base-info.html" class="item-title fa fa-cogs"> 个人信息</a>
+
+
+            </div>
+        </div>
+        <div class="contents">
+{#            <div style="height: 2000px;">1234</div>#}
+            {% block contents %}{% endblock %}
+        </div>
+    </div>
+    <div class="pg-footer"></div>
+
+
+    <script type="text/javascript" src="/static/js/jquery-3.3.1.js"></script>
+    {% block js %}{% endblock %}
+{#    <script>#}
+{#        $(function () {#}
+{#            $('#menu_tag').addClass('active');#}
+{#            $('#menu_tag').parent().removeClass('hide');#}
+{#        })#}
+{#    </script>#}
+
+</body>
+</html>
+
+
